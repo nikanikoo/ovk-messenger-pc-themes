@@ -1,0 +1,431 @@
+/* Android 4 Holo Dark inspired theme for the OpenVK client. Import as a CSS theme. */
+:root {
+  --base-bg:#101214; --base-fg:#f2f2f2; --base-icon:#33b5e5; --base-icon-hover:#66d4ff;
+  --gray-icon:#9e9e9e; --gray-icon-hover:#33b5e5;
+  --gray-fg:#9e9e9e; --darkgray-fg:#777d82; --bluegray-fg:#9e9e9e;
+  --user-name-fg:#33b5e5; --link-fg:#33b5e5; --link-darker-fg:#66d4ff;
+  --link-service-fg:#80cbc4; --ovk-accent:#33b5e5;
+  --win32-window-frame:#090a0b; --win32-window-title-bg:#1c1f21;
+  --win32-window-title-fg:#fff; --win32-window-title-btn-fg:#fff;
+  --win32-window-title-font-family:Roboto,"Arial",sans-serif;
+  --win32-window-title-btn-hover-bg:#26343a; --win32-window-title-btn-active-bg:#33464e;
+  --win32-window-title-closebtn-hover-bg:#b71c1c; --win32-window-title-closebtn-active-bg:#8e1717;
+  --header-border:#303438; --left-border:#303438;
+  --layer-box-bg:#1b1f22; --layer-box-header-bg:#202428; --layer-box-header-border:#303438;
+  --layer-box-shadow:rgba(0,0,0,.55);
+  --dialogitem-bg:#171a1d; --dialogitem-hover-bg:#252a2e; --dialogitem-selected-bg:#07384a;
+  --dialogitem-name-fg:#f2f2f2; --dialogitem-selected-name-fg:#fff;
+  --dialogitem-message-fg:#aeb4b8; --dialogitem-selected-message-fg:#fff;
+  --dialogitem-date-fg:#858b90; --dialogitem-selected-date-fg:#d8f5ff;
+  --dialogitem-online-bg:#33b5e5; --dialogitem-badge-bg:#33b5e5; --dialogitem-badge-fg:#101214;
+  --dialogitem-selected-badge-bg:#33b5e5; --dialogitem-selected-badge-fg:#101214;
+  --dialogitem-outbadge-bg:#0099cc; --dialogitem-outbadge-fg:#fff;
+  --dialogitem-muted-badge-bg:#555b60; --dialogitem-muted-icon:#858b90;
+  --dialogitem-selected-muted-icon:#fff; --dialogitem-selected-verified-icon:#33b5e5;
+  --dialogitem-delete-icon:#9e9e9e; --dialogitem-delete-icon-hover:#66d4ff;
+  --dialogitem-selected-delete-icon:#fff; --dialogitem-selected-delete-icon-hover:#fff;
+  --dialogitem-sending-icon:#9e9e9e; --dialogitem-selected-sending-icon:#fff;
+  --dialogitem-important-icon:#9e9e9e; --dialogitem-selected-important-icon:#fff;
+  --dialogitem-message-out-fg:#66d4ff;
+  --header-title:#f2f2f2; --header-close-fg:#b0b5b8; --header-back-fg:#33b5e5;
+  --header-back-icon:#33b5e5; --header-remove-selection-icon:#33b5e5;
+  --header-remove-selection-icon-hover:#66d4ff;
+  --header-4state-icon:#9e9e9e; --header-4state-icon-hover:#33b5e5;
+  --header-4state-active-icon:#33b5e5; --header-4state-active-icon-hover:#66d4ff;
+  --info-icon:#33b5e5; --info-name-edit-icon:#33b5e5; --info-name-edit-icon-hover:#66d4ff;
+  --info-list-item-hover-bg:#07384a; --info-members-add-participant-selected-checkbox:#33b5e5;
+  --info-members-add-participant-unselected-checkbox:#6f777c;
+  --dialog-input-bg:#171a1d; --dialog-input-ta-bg:#202428; --dialog-input-ta-border:#303438;
+  --dialog-input-ta-empty-fg:#858b90; --dialog-input-send-icon:#33b5e5;
+  --dialog-input-send-inactive-icon:#777d82; --dialog-input-send-active-icon:#33b5e5;
+  --dialog-input-send-mic-icon:#33b5e5; --dialog-input-send-mic-icon-hover:#66d4ff;
+  --dialog-input-attach-bg:#202428; --dialog-input-attach-doc-icon:#33b5e5;
+  --dialog-input-attach-doc-upload-bg:#3b4247; --dialog-input-attach-doc-upload-progress-bg:#33b5e5;
+  --dialog-input-attach-file-name-fg:#f2f2f2; --dialog-input-attach-file-size-fg:#9e9e9e;
+  --dialog-messages-date-bg:#292e32; --dialog-messages-date-fg:#f2f2f2;
+  --dialog-messages-date-shadow:rgba(0,0,0,.35); --dialog-messages-new-line-bg:#33b5e5;
+  --dialog-history-end-button-shadow:rgba(0,0,0,.45);
+  --dialog-history-end-button-border:#3a4146; --dialog-history-end-button-hover-border:#33b5e5;
+  --dialog-history-end-button-bg:#202428; --dialog-history-end-button-hover-bg:#293238;
+  --dialog-history-end-button-badge-bg:#33b5e5; --dialog-history-end-button-badge-fg:#101214;
+  --dialog-history-end-button-icon:#33b5e5; --dialog-history-end-button-icon-hover:#66d4ff;
+  --dialog-message-unread-bg:#202a2f; --dialog-message-hover-bg:#1d2529;
+  --dialog-message-selected-bg:#07384a; --dialog-message-select-icon:#8a9297;
+  --dialog-message-select-hover-icon:#33b5e5; --dialog-message-selected-select-icon:#fff;
+  --dialog-message-icon:#33b5e5; --dialog-message-icon-hover:#66d4ff;
+  --dialog-forwarded-line:#33b5e5; --dialog-pinned-icon:#33b5e5;
+  --photos-selected-icon-fg:#fff; --photos-selected-icon-bg:#33b5e5;
+  --photos-album-icon-fg:#33b5e5; --photos-album-icon-bg:#252a2e;
+  --photos-album-icon-hover-bg:#30383d;
+  --compose-filter-user-hover-bg:#07384a; --compose-filter-user-name-fg:#f2f2f2;
+  --compose-tag-bg:#07384a; --compose-tag-fg:#fff; --compose-tag-remove-icon:#9e9e9e;
+  --compose-tag-remove-icon-hover:#fff; --dialog-input-ta-empty-fg:#858b90;
+  --layer-loading-bg:rgba(16,18,20,.78); --layer-loading-spinner-bg:#33b5e5;
+  --spinner-bg:#33b5e5; --spinner-monochrome-bg:#33b5e5;
+  --input-bg:#202428; --input-placeholder-fg:#858b90; --input-search-bg:#202428;
+  --input-search-placeholder-fg:#858b90; --input-search-icon:#33b5e5;
+  --textarea-border:#3a4146; --button-fg:#f2f2f2; --button-bg:#292e32;
+  --button-hover-bg:#343b40; --button-hover-fg:#fff; --button-active-bg:#202428;
+  --buttonlight-fg:#33b5e5; --buttonlight-bg:transparent; --buttonlight-hover-bg:#252a2e;
+  --buttonlight-active-bg:#202428; --buttonwide-fg:#fff; --buttonwide-bg:#0099cc;
+  --buttonwide-hover-bg:#00a8dd; --buttonwide-active-bg:#007da8;
+  --context-menu-bg:#202428; --context-menu-border:#3a4146;
+  --context-menu-item-hover-bg:#07384a; --context-menu-item-hover-fg:#fff;
+  --context-menu-item-hover-count-bg:#33b5e5; --context-menu-item-hover-count-fg:#101214;
+  --dropdown-items-bg:#202428; --dropdown-items-border:#3a4146; --dropdown-item-hover-bg:#07384a;
+  --popover-bg:#202428; --popover-border:#3a4146; --popover-shadow:rgba(0,0,0,.5);
+  --settings-tab-active-fg:#33b5e5; --settings-tab-underline-bg:#33b5e5;
+  --settings-separator-bg:#303438; --settings-line-left-fg:#d5d8da;
+  --settings-line-toggle-label-fg:#b0b5b8; --settings-buttonlight-hover-bg:#252a2e;
+  --communities-icon:#9e9e9e; --communities-icon-hover:#33b5e5;
+  --accpanel-bg:#171a1d; --accpanel-border-right:#303438; --accpanel-sep-border-bottom:#303438;
+  --accpanel-cur-icon:#33b5e5; --accpanel-badge-fg:#101214; --accpanel-badge-bg:#33b5e5;
+  --accpanel-graybadge-bg:#555b60; --accpanel-dimmed-bg:#252a2e;
+  --accpanel-add-bg:#252a2e; --accpanel-add-fg:#b0b5b8;
+  --accpanel-add-hover-bg:#07384a; --accpanel-add-hover-fg:#fff;
+  --toggle-bg:#30363a; --toggle-slider-bg:#b0b5b8; --toggle-enabled-bg:#007da8;
+  --toggle-disabled-bg:#30363a; --toggle-enabled-slider-bg:#33b5e5;
+  --checkbox-border:#6f777c; --checkbox-bg:#33b5e5; --checkbox-checked-bg:#30363a;
+  --radio-border:#6f777c; --radio-selected-border:#33b5e5; --radio-selected-fg:#33b5e5;
+  --smiles-box-bg:#1b1f22; --smiles-box-border:#3a4146; --smiles-box-shadow:rgba(0,0,0,.6);
+  --smiles-box-smile-hover-bg:#293238; --smiles-box-section-header-fg:#9e9e9e;
+  --smiles-box-tabs-border:#303438; --smiles-box-tab-active-bg:#202428;
+  --smiles-box-tab-active-fg:#33b5e5; --smiles-box-icon-normal:#9e9e9e;
+  --smiles-box-icon-hover:#33b5e5; --smiles-box-icon-active:#66d4ff;
+  --toast-yellow-bg:#292e32; --toast-yellow-fg:#fff; --toast-green-bg:#292e32;
+  --toast-green-fg:#fff; --toast-message-bg:#292e32; --toast-message-fg:#f2f2f2;
+  --toast-link-fg:#66d4ff; --nt-input-bg:#252a2e;
+  --dialog-header-back-badge-bg:#33b5e5; --dialog-header-back-badge-fg:#101214;
+  --info-chat-image-placeholder-icon:#777d82;
+}
+
+/* Holo uses a compact Roboto-like typeface and flat dark surfaces. */
+body, body *, button, input, textarea, select {
+  font-family:Roboto,"Arial",sans-serif !important;
+}
+body { background:#101214; color:#f2f2f2; }
+
+/* Keep the conversation pane and its contents inside the available column. */
+.main_view.im_view { display:flex !important; align-items:stretch; }
+.main_view.im_view > .acc_panel,
+.main_view.im_view > .im_left { float:none; flex:0 0 auto; box-sizing:border-box; }
+.main_view.im_view > .im_right {
+  float:none; flex:1 1 0%; min-width:0; width:auto !important;
+  margin-left:0 !important; box-sizing:border-box; background:#101214 !important;
+}
+.im_dialog_messages { background:#101214 !important; }
+.im_right.im_dialog, .im_right.im_chat_info { background:#101214 !important; }
+
+/* Desktop title bar follows Holo's dark action bar and cyan focus color. */
+.window_header {
+  min-height:30px !important; height:30px !important; box-sizing:border-box;
+  display:flex; align-items:center; padding:0 5px;
+  background:#1c1f21 !important; color:#fff !important;
+  border:0 !important; border-bottom:1px solid #08090a !important;
+  box-shadow:0 1px 0 #303438;
+}
+.window_header_draggable { height:100% !important; top:0 !important; }
+.window_header_left {
+  flex:1; min-width:0; height:100%; line-height:30px !important;
+  font-size:13px !important; font-weight:500; color:#fff !important;
+}
+.window_header_buttons { position:absolute; z-index:2; top:0; right:3px; height:100%; display:flex; align-items:center; }
+.window_header_button {
+  width:24px !important; height:24px !important; margin:0 2px !important;
+  position:relative; display:block !important; border:0 !important;
+  border-radius:2px !important; box-shadow:none !important;
+  background:transparent !important; transition:background .12s ease;
+}
+.window_header_button::before {
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:13px !important; height:13px !important; margin:0 !important;
+  background-color:#b0b5b8 !important;
+}
+.window_header_button:hover { background:#26343a !important; }
+.window_header_button:active { background:#33464e !important; }
+.window_header_button.-close:hover { background:#b71c1c !important; }
+body:-webkit-window-inactive .window_header { background:#303438 !important; color:#9e9e9e !important; }
+body:-webkit-window-inactive .window_header_left { color:#9e9e9e !important; }
+
+/* Main panels, cards, controls, and inputs. */
+.layer_box, .settings_content, .settings_header, .im_left,
+.im_dialog_input, .acc_panel { background-color:#171a1d; }
+.layer_box { border:1px solid #3a4146; border-radius:2px; box-shadow:0 8px 24px rgba(0,0,0,.5); }
+.layer_box_header, .settings_header { border-bottom:1px solid #303438; }
+.im_left { border-right:1px solid #303438; }
+.im_button, .im_button_light, .wide_button, .wide_button_light,
+.acc_add_button, .openvk-theme-choice-import {
+  border:1px solid #3a4146; border-radius:2px !important; box-shadow:none;
+  background:#292e32; color:#f2f2f2;
+}
+.im_button:hover, .im_button_light:hover, .wide_button_light:hover,
+.openvk-theme-choice-import:hover { background:#343b40; color:#fff; }
+.wide_button, .acc_add_button { background:#0099cc; border-color:#0099cc; color:#fff; }
+.wide_button:hover, .acc_add_button:hover { background:#00a8dd; border-color:#00a8dd; color:#fff; }
+.im_button:active, .im_button_light:active, .wide_button:active,
+.wide_button_light:active, .acc_add_button:active { transform:translateY(1px); }
+input[type="text"], input[type="password"], textarea, .dropdown_input {
+  border:1px solid #3a4146; border-radius:2px !important;
+  background:#202428; color:#f2f2f2;
+}
+input::placeholder, textarea::placeholder { color:#858b90; }
+.dropdown_items, .context_menu, .openvk-theme-context-menu {
+  border:1px solid #3a4146; border-radius:2px !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.5); background:#202428;
+}
+
+/* Chat heading, input, and action icons. */
+.header.im_dialog_header {
+  background:#1b1f22 !important; border-bottom:1px solid #303438;
+  box-shadow:none;
+}
+.header_title, .im_dialog_header .header_title,
+.im_dialog_header .im_dialog_header_title,
+.header.im_dialog_header .im_dialog_header_title_label { color:#f2f2f2 !important; }
+.im_dialog_header_title, .im_dialog_header_title_label,
+.im_dialog_header_compact_title, .im_dialog_selection_header_title,
+.im_dialog_header_title *, .im_dialog_header_title_label *,
+.im_dialog_header_compact_title *, .im_dialog_selection_header_title * {
+  -webkit-user-select:none !important; user-select:none !important;
+}
+.im_dialog_header .im_dialog_header_icon, .im_dialog_header .im_dialog_header_info,
+.im_dialog_header .im_dialog_header_remove_selection, .im_dialog_header .im_dialog_header_calendar,
+.im_dialog_header .im_dialog_header_back { background-color:#33b5e5 !important; }
+.im_dialog_header .im_dialog_header_icon:hover, .im_dialog_header .im_dialog_header_info:hover,
+.im_dialog_header .im_dialog_header_remove_selection:hover,
+.im_dialog_header .im_dialog_header_calendar:hover { background-color:#66d4ff !important; }
+.im_dialog_input { background:#171a1d !important; }
+.im_dialog_input_ta_wrap { background:#202428 !important; border:1px solid #3a4146; }
+.im_dialog_input_ta_wrap textarea { border:0 !important; background:transparent !important; }
+.im_dialog_input_ta_wrap_content_editable:empty,
+.im_dialog_input_ta_wrap_content_editable:empty::before { color:#858b90 !important; }
+.im_dialog_input_attach, .im_dialog_input_ta_icons>div, .im_dialog_input_send,
+.im_dialog_header_icon, .im_dialog_header_info, .im_dialog_header_remove_selection,
+.im_left_search_icon, .im_dialog_item_delete { color:#33b5e5 !important; }
+.im_dialog_input_attach:hover, .im_dialog_input_ta_icons>div:hover,
+.im_dialog_input_send:hover, .im_dialog_header_icon:hover, .im_dialog_header_info:hover,
+.im_dialog_header_remove_selection:hover, .im_left_search_icon:hover,
+.im_dialog_item_delete:hover { color:#66d4ff !important; }
+.im_dialog_input_send.-mic { filter:none !important; }
+.box_attach_album_menu_item_icon.-photo::before,
+.box_attach_album_menu_item_icon.-video::before { background-color:#33b5e5 !important; filter:none !important; }
+
+/* Conversation list, account rail, and compose recipient selection. */
+.im_dialog_item { background:#171a1d; border-bottom:1px solid #252a2e; }
+.im_dialog_item:hover { background:#252a2e !important; }
+.im_dialog_item.-selected, .im_dialog_item.-selected * { color:#fff !important; }
+.im_dialog_item.-selected { background:#07384a !important; box-shadow:inset 3px 0 #33b5e5; }
+.im_dialog_item.-selected .im_dialog_item_badge_sending,
+.im_dialog_item.-selected .im_dialog_item_verified,
+.im_dialog_item.-selected .im_dialog_item_muted,
+.im_dialog_item.-selected .im_dialog_item_important,
+.im_dialog_item.-selected .im_dialog_item_delete { background-color:#fff !important; }
+.im_dialog_item_badge { background:#33b5e5 !important; color:#101214 !important; }
+.im_dialog_item_badge_out { background:#0099cc !important; color:#fff !important; }
+.acc_panel { border-right:1px solid #303438; }
+.acc_item.-enabled { background:#07384a !important; color:#fff !important; box-shadow:inset 3px 0 #33b5e5; }
+.acc_item.-enabled *,
+.acc_item.-enabled [class*="icon"], .acc_item.-enabled [class*="icon"]::before { color:#fff !important; background-color:#fff !important; }
+.acc_item.-enabled::before { display:none !important; }
+.acc_item_badge { background:#33b5e5 !important; color:#101214 !important; }
+.acc_item.-enabled .acc_item_badge { background:#33b5e5 !important; color:#101214 !important; }
+.acc_add_button { background:#0099cc !important; }
+.acc_add_button::before { background-color:#fff !important; }
+.im_dialogs_search_item_user.-hover, .im_dialogs_search_item_user:hover,
+.im_dialogs_search_item_user.-native_hover:hover, .im_dialogs_search_item_user.-selected {
+  background:#07384a !important; color:#fff !important;
+}
+.im_dialogs_search_item_user.-hover *, .im_dialogs_search_item_user:hover *,
+.im_dialogs_search_item_user.-native_hover:hover *,
+.im_dialogs_search_item_user.-selected * { color:#fff !important; }
+.im_dialogs_search_item_user.-hover [class*="icon"],
+.im_dialogs_search_item_user:hover [class*="icon"] { background-color:#fff !important; }
+.im_info_list_item.-hl:hover, .im_info_members_user:hover,
+.im_info_add_participant_list .im_info_members_user:hover { background:#07384a !important; color:#fff !important; }
+.im_info_list_item.-hl:hover *, .im_info_members_user:hover *,
+.im_info_add_participant_list .im_info_members_user:hover * { color:#fff !important; }
+.im_info_members_user_checkbox, .im_info_members_user_checkbox.-not { background-color:#33b5e5 !important; }
+.im_info_members_user_checkbox.-disabled { background-color:#6f777c !important; }
+.im_info_add_participant_filter_tag { background:#07384a !important; color:#fff !important; border:1px solid #33b5e5; }
+.im_info_add_participant_filter_tag_remove,
+.im_info_add_participant_filter_tag_remove:hover { background-color:#fff !important; }
+
+/* Menus and attachment picker keep labels and icons readable on hover. */
+.im_context_menu_item.-hover, .im_context_menu_item:not(.-custom-hover):hover,
+.im_context_menu_item.-custom-hover, .dropdown_item:hover,
+.im_dialog_menu_item:hover, .im_dialog_menu_item.-hover,
+.im_main_menu_item:not(.-no-hover):hover {
+  background:#07384a !important; color:#fff !important;
+}
+.im_context_menu_item.-hover *, .im_context_menu_item:not(.-custom-hover):hover *,
+.im_context_menu_item.-custom-hover *, .dropdown_item:hover *,
+.im_dialog_menu_item:hover *, .im_dialog_menu_item.-hover *,
+.im_main_menu_item:not(.-no-hover):hover * { color:#fff !important; }
+.im_context_menu_item.-hover [class*="icon"],
+.im_context_menu_item:not(.-custom-hover):hover [class*="icon"],
+.im_context_menu_item.-custom-hover [class*="icon"],
+.im_dialog_menu_item:hover [class*="icon"], .im_dialog_menu_item.-hover [class*="icon"],
+.im_main_menu_item:not(.-no-hover):hover [class*="icon"] { background-color:#fff !important; }
+.im_dialog_attach_menu { background:#202428 !important; border:1px solid #3a4146; }
+.im_dialog_menu_item_icon.-doc, .im_dialog_menu_item_icon.-photo,
+.im_dialog_menu_item_icon.-video, .im_dialog_menu_item_icon.-audio,
+.im_dialog_menu_item_icon.-map { background-color:#33b5e5 !important; }
+.box_attach_header { background:#202428 !important; border-bottom:1px solid #3a4146; }
+.box_attach_title, .box_attach_title_select>.select_label_title,
+.box_attach_title_select .im_context_menu_title { color:#f2f2f2 !important; font-weight:700 !important; }
+.box_attach_content { background:#171a1d !important; color:#f2f2f2; }
+.box_attach_content .im_button, .box_attach_content .im_button_light,
+.box_attach_content .wide_button, .box_attach_content .wide_button_light {
+  border:1px solid #3a4146 !important; border-radius:2px !important; box-shadow:none;
+  background:#292e32 !important; color:#33b5e5 !important;
+}
+.box_attach_content .im_button:hover, .box_attach_content .im_button_light:hover,
+.box_attach_content .wide_button:hover, .box_attach_content .wide_button_light:hover {
+  background:#07384a !important; color:#fff !important;
+}
+.box_attach_content .search_field_bg, .im_left_search_input_bg {
+  background:#202428 !important; border:1px solid #3a4146; border-radius:2px !important;
+}
+.box_attach_content input[type="text"].search_field_input,
+.communities_search_wrap input[type="text"].search_field_input,
+.im_left_search input[type="text"].im_left_search_input {
+  border:0 !important; background:transparent !important; color:#f2f2f2 !important; box-shadow:none !important;
+}
+.box_attach_content .search_field_icon, .communities_search_wrap .search_field_icon { background-color:#33b5e5 !important; }
+.box_attach_doc_item { background:#171a1d; border-bottom:1px solid #303438; }
+.box_attach_doc_item:hover { background:#07384a !important; color:#fff !important; }
+.box_attach_doc_item:hover *, .box_attach_doc_item:hover .im_attach_doc_file_size { color:#fff !important; }
+.im_attach_upload_progress { border:1px solid #33b5e5; border-radius:2px; background:#202428; }
+
+/* Message actions, selection, unread state, pinned strip, and online markers. */
+.im_dialog_message_button.-reply, .im_dialog_message_button.-forward,
+.im_dialog_message_button.-important, .im_dialog_message_button.-edit,
+.im_dialog_message_button { background-color:#26343a !important; }
+.im_dialog_message:hover .im_dialog_message_button:not(.-selected):hover,
+.im_dialog_message_next:hover .im_dialog_message_button:not(.-selected):hover,
+.im_dialog_message_button.-selected { background-color:#007da8 !important; }
+.im_dialog_message.-selected, .im_dialog_message_next.-selected,
+.im_dialog_message.-gift.-selected { background-color:#07384a !important; }
+.im_dialog_message.-selected, .im_dialog_message.-selected *,
+.im_dialog_message_next.-selected, .im_dialog_message_next.-selected * { color:#fff !important; }
+.im_dialog_message.-selected .im_dialog_message_button,
+.im_dialog_message_next.-selected .im_dialog_message_button { background-color:#33b5e5 !important; }
+.im_dialog_message_container.-out-unread,
+.im_dialog_messages.openvk-wallpaper-active .im_dialog_message_container.-out-unread {
+  background:#202a2f !important;
+}
+.im_message_reply_line { background:#33b5e5 !important; }
+.im_fwd_messages { border-left-color:#33b5e5 !important; }
+.im_dialog_pinned_msg { background:#202a2f !important; border-bottom:1px solid #303438; box-shadow:0 1px 2px rgba(0,0,0,.35); }
+.im_dialog_pinned_msg_icon { background-color:#33b5e5 !important; }
+.im_dialog_pinned_msg_user_name { color:#33b5e5 !important; }
+.im_dialog_pinned_msg_user_date { color:#9e9e9e !important; }
+.im_dialog_pinned_msg_text { color:#f2f2f2 !important; }
+.im_dialog_pinned_msg_hide { background-color:#6f777c !important; }
+.im_dialog_pinned_msg_hide:hover { background-color:#33b5e5 !important; }
+.im_dialog_item_online, .im_dialog_item_online_mobile,
+.im_dialog_item_photo_wrap.-online::after { background-color:#33b5e5 !important; }
+.im_dialog_header_verified, .im_dialog_item_verified {
+  filter:none !important;
+}
+.im_dialog_item.-selected .im_dialog_item_verified {
+  background-color:#33b5e5 !important;
+}
+
+/* Photo picker, date marker, and new-message divider. */
+.im_dialog_messages_date_inner {
+  background:#292e32 !important; color:#f2f2f2 !important;
+  border:1px solid #3a4146; border-radius:2px !important;
+  box-shadow:0 2px 5px rgba(0,0,0,.35) !important;
+}
+.im_dialog_date { color:#33b5e5 !important; }
+.im_new_messages_label {
+  background:#1b1f22 !important; color:#f2f2f2 !important;
+  border:1px solid #303438; border-radius:2px !important;
+  box-shadow:0 2px 5px rgba(0,0,0,.35) !important;
+}
+.im_new_messages_line { background:#33b5e5 !important; }
+.im_history_end_button {
+  background:#202428 !important; border:1px solid #3a4146 !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.45) !important;
+}
+.im_history_end_button:hover {
+  background:#293238 !important; border-color:#33b5e5 !important;
+}
+.im_history_end_button_wrap:not(.-loading) .im_history_end_button::before {
+  background-color:#33b5e5 !important; opacity:1;
+}
+.im_history_end_button_wrap:not(.-loading):hover .im_history_end_button::before {
+  background-color:#66d4ff !important;
+}
+.im_history_end_button_badge {
+  background:#33b5e5 !important; color:#101214 !important;
+  border:1px solid #101214; font-weight:700;
+}
+.im_photos_photo_selected:not(.-unselected) { background-color:#33b5e5 !important; }
+.im_photos_photo_selected .im_photos_photo_selected_icon { background-color:#fff !important; }
+.im_photos_photo_selected.-unselected .im_photos_photo_selected_icon { background-color:#9e9e9e !important; }
+.im_photos_button_icon.-webcam { background-color:#33b5e5 !important; }
+.im_photos_result, .im_photos_result.-send { color:#33b5e5 !important; }
+
+/* Toasts and in-app appearance controls. */
+.toast { box-sizing:border-box; border:1px solid #3a4146; border-radius:2px; box-shadow:0 4px 16px rgba(0,0,0,.45); }
+.toast, .toast.-message, .toast.-conn_cert_error, .toast.-conn_connecting,
+.toast.-conn_proxy_error, .toast.-conn_updating, .toast.-conn_waiting, .toast.-conn_connected {
+  background:#292e32 !important; color:#f2f2f2 !important;
+}
+.toast .toast_text, .toast .toast_text *, .toast_text>a.im_simple_link { color:#f2f2f2 !important; }
+.openvk-wallpaper-choose {
+  min-height:32px !important; margin-left:10px !important; padding:0 14px !important;
+  border:1px solid #3a4146 !important; border-radius:2px !important;
+  background:#292e32 !important; color:#f2f2f2 !important;
+  font:500 14px Roboto,"Arial",sans-serif !important; box-shadow:none;
+}
+.openvk-wallpaper-choose:hover { background:#07384a !important; border-color:#33b5e5 !important; color:#fff !important; }
+input.settings_downloads_field {
+  border:1px solid #3a4146 !important; border-radius:2px !important;
+  background:#202428 !important; color:#f2f2f2 !important; box-shadow:none !important;
+}
+.settings_tab_underline { height:2px; background:#33b5e5; }
+.checkbox_icon { border:1px solid #6f777c !important; border-radius:2px !important; background:#202428 !important; }
+.checkbox.-checked>.checkbox_icon { border:0 !important; background:#33b5e5 !important; }
+.checkbox.-checked>.checkbox_icon>.checkbox_icon_icon { background-color:#101214 !important; }
+.radio_circle { border-color:#6f777c !important; background:#202428 !important; }
+.radio.-selected .radio_circle { border-color:#33b5e5 !important; }
+.radio.-selected .radio_circle::before { background:#33b5e5 !important; }
+.toggle_bg { border:1px solid #3a4146 !important; border-radius:10px !important; background:#30363a !important; }
+.toggle_slider { border:0 !important; border-radius:50% !important; background:#b0b5b8 !important; }
+.toggle.-enabled .toggle_bg { background:#006b8f !important; }
+.toggle.-enabled .toggle_slider { background:#33b5e5 !important; }
+
+/* Holo-style emoji picker and loaded notification popup palette. */
+.im_dialog_smile_stickers {
+  background:#1b1f22 !important; border:1px solid #3a4146 !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.55) !important; border-radius:2px !important;
+}
+.smiles_section_header { background:#1b1f22 !important; color:#9e9e9e !important; font-weight:600; }
+.smile:hover, .sticker:hover { background:#293238 !important; border-radius:2px !important; }
+.smile_stickers_tabs { border-top:1px solid #303438 !important; background:#1b1f22 !important; }
+.smile_stickers_icon_tab.-active, .smile_stickers_tab.-active,
+.smile_stickers_icon_tab:active, .smile_stickers_tab:active { background:#202428 !important; }
+.smile_stickers_icon_tab.-active::before,
+.smile_stickers_icon_tab:active::before { background-color:#33b5e5 !important; }
+.im_info_name_edit, .im_info_name_edit:hover,
+.im_info_bottom_panel_button_wide.-back::before,
+.im_dialog_header_back, .header_back { background-color:#33b5e5 !important; }
+.sticker:hover .sticker_img, .sticker:hover .sticker_img>.component-image-image,
+.sticker:hover .sticker_anim_container, .sticker:hover .sticker_anim_container>svg {
+  opacity:1 !important; visibility:visible !important;
+}
+
+/* Horizontal theme-card scroller in Appearance settings. */
+.openvk-theme-grid {
+  scrollbar-color:#33b5e5 #1b1f22;
+  scrollbar-width:thin;
+}
+.openvk-theme-grid::-webkit-scrollbar { height:8px; }
+.openvk-theme-grid::-webkit-scrollbar-track { background:#1b1f22; border-radius:4px; }
+.openvk-theme-grid::-webkit-scrollbar-thumb {
+  min-width:28px; background:#33b5e5; border:2px solid #1b1f22; border-radius:4px;
+}
+.openvk-theme-grid::-webkit-scrollbar-thumb:hover { background:#66d4ff; }

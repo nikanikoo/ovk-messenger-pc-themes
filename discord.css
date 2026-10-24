@@ -1,0 +1,651 @@
+/* Discord-inspired dark theme for OpenVK. Import this file in Appearance. */
+:root {
+  --base-bg:#313338; --base-fg:#dbdee1; --base-icon:#b5bac1; --base-icon-hover:#fff;
+  --gray-icon:#b5bac1; --gray-icon-hover:#fff; --gray-fg:#949ba4; --darkgray-fg:#949ba4;
+  --bluegray-fg:#949ba4; --user-name-fg:#f2f3f5; --link-fg:#00a8fc; --link-darker-fg:#00a8fc;
+  --link-service-fg:#23a559; --win32-window-frame:#1e1f22; --win32-window-title-fg:#f2f3f5;
+  --win32-window-title-bg:#1e1f22; --win32-window-title-btn-fg:#dbdee1;
+  --win32-window-title-btn-hover-bg:#35373c; --win32-window-title-btn-active-bg:#404249;
+  --win32-window-title-closebtn-hover-bg:#da373c; --win32-window-title-closebtn-active-bg:#a1282c;
+  --left-border:#1f2023; --header-border:#26272b; --layer-bg:rgba(0,0,0,.7);
+  --layer-box-bg:#313338; --layer-box-header-bg:#313338; --layer-box-header-border:#26272b;
+  --layer-box-close-icon:#b5bac1; --layer-box-close-icon-hover:#fff; --layer-box-shadow:rgba(0,0,0,.35);
+  --dialogitem-bg:#2b2d31; --dialogitem-hover-bg:#35373c; --dialogitem-selected-bg:#404249;
+  --dialogitem-name-fg:#f2f3f5; --dialogitem-message-fg:#949ba4; --dialogitem-date-fg:#949ba4;
+  --dialogitem-selected-name-fg:#fff; --dialogitem-selected-message-fg:#dbdee1;
+  --dialogitem-selected-message-out-fg:#dbdee1; --dialogitem-selected-date-fg:#b5bac1;
+  --dialogitem-online-bg:#23a559; --dialogitem-badge-bg:#f23f42; --dialogitem-badge-fg:#fff;
+  --dialog-message-hover-bg:#2e3035; --dialog-message-unread-bg:#35373c;
+  --dialog-input-bg:#313338; --dialog-input-ta-bg:#383a40; --dialog-input-ta-border:#383a40;
+  --input-bg:#1e1f22; --input-search-bg:#1e1f22; --input-search-icon:#949ba4;
+  --input-search-placeholder-fg:#949ba4; --input-placeholder-fg:#949ba4; --textarea-border:#1e1f22;
+  --button-fg:#fff; --button-bg:#5865f2; --button-hover-bg:#4752c4; --button-active-bg:#3c45a5;
+  --buttonlight-fg:#dbdee1; --buttonlight-bg:#4e5058; --buttonlight-hover-bg:#6d6f78;
+  --buttonlight-active-bg:#404249; --buttonwide-fg:#fff; --buttonwide-bg:#5865f2;
+  --buttonwide-hover-bg:#4752c4; --buttonwide-active-bg:#3c45a5;
+  --context-menu-bg:#111214; --context-menu-border:#111214; --context-menu-item-hover-bg:#5865f2;
+  --dropdown-items-bg:#2b2d31; --dropdown-items-border:#1e1f22; --dropdown-item-hover-bg:#35373c;
+  --settings-tab-fg:#b5bac1; --settings-tab-active-fg:#fff; --settings-tab-underline-bg:#5865f2;
+  --settings-separator-bg:#3f4147; --settings-line-editing-bg:#383a40;
+  --checkbox-bg:#5865f2; --radio-selected-fg:#5865f2; --toggle-enabled-bg:#23a559;
+  --settings-scale-fg:#5865f2; --settings-scale-selected-bg:#5865f2;
+  --layer-box-header-border:#26272b; --popover-bg:#2b2d31;
+}
+
+body,button,input,textarea,select { font-family:"gg sans",Arial,sans-serif !important; }
+body,.main_view,.im_view,.im_right,.im_dialog,.im_dialog_messages { background:#313338; color:#dbdee1; }
+body { --ovk-accent:#5865f2; }
+.window_header { background:#1e1f22; color:#f2f3f5; }
+.im_left { position:relative; box-sizing:border-box; width:320px; padding-left:0; background:#2b2d31; border-right:1px solid #1f2023; }
+.im_left_search { flex-basis:52px; height:52px; border-bottom:1px solid #1f2023; }
+.im_left_search_input_wrap { padding-top:10px; padding-bottom:10px; }
+.im_left_search_input_bg { height:32px; border-radius:6px; background:#1e1f22; }
+input[type="text"].im_left_search_input { height:32px; color:#dbdee1; }
+.im_left_search_icon:hover { background-color:#35373c !important; }
+.im_dialog_item { height:58px; margin:1px 8px; border-radius:6px; background:#2b2d31; }
+.im_dialog_item.-hover,.im_dialog_item.-no-custom-hover:hover { background:#35373c; }
+.im_dialog_item.-selected { background:#404249; }
+.im_dialog_item_photo_wrap { padding:7px 0 0 10px; }
+.im_dialog_item_photo { width:40px; height:40px; background-size:40px 40px; }
+.im_dialog_item_online { border-color:#2b2d31; }
+.im_dialog_item.-selected .im_dialog_item_online { border-color:#404249; }
+.im_dialog_item_name { color:#f2f3f5; font-weight:600; }
+.im_dialog_item_message,.im_dialog_item_date { color:#b5bac1; }
+.im_dialog_item.-selected .im_dialog_item_message,.im_dialog_item.-selected .im_dialog_item_date { color:#dbdee1; }
+.header,.header.im_dialog_header { background:#313338; border-bottom:1px solid #26272b; }
+.header_title { color:#f2f3f5; font-weight:600; }
+.dialog_header_status { color:#949ba4; font-size:13px; }
+.im_dialog_header_icon:hover,.im_dialog_header_icon.-active { background-color:#404249; }
+.im_dialog_messages { background:#313338; }
+.im_dialog_date { color:#949ba4; font-size:12px; font-weight:700; }
+.im_dialog_date:before,.im_dialog_date:after { content:""; display:inline-block; width:calc(50% - 90px); height:1px; margin:0 12px 4px; background:#3f4147; }
+.im_dialog_message { padding:1px 0; }
+.im_dialog_message:hover { background:#2e3035; }
+.im_dialog_message_container { margin:0 32px; }
+body.-compact_mode .im_dialog_message_container { margin:0 14px; }
+.im_dialog_message_r { padding:6px 16px 6px 62px; }
+.im_dialog_message_container.-next { padding:2px 16px 2px 62px; }
+.im_dialog_message_photo { width:40px; height:40px; background-size:40px 40px; }
+.im_dialog_message_name { color:#f2f3f5; font-weight:600; }
+.im_dialog_message_text { color:#dbdee1; line-height:1.45; }
+.im_dialog_message_time { color:#949ba4; }
+.im_dialog_input { min-height:56px; border-top:1px solid #26272b; border-right:0; border-bottom:0; border-left:0; background:#313338; padding:0 16px; box-sizing:border-box; }
+.im_dialog_input_ta_wrap { min-height:0; margin:10px 0; border:0; border-radius:8px; background:transparent; }
+.im_dialog_input_ta_wrap_content_editable { color:#dbdee1; padding:7px 15px 8px 10px; }
+.im_dialog_input_ta_wrap_content_editable:empty:before { color:#949ba4; }
+.im_dialog_input_ta_icons>div,.im_dialog_input_send { filter:brightness(1.25); }
+.im_dialog_input_ta_icons>div:hover { background-color:#4e5058 !important; }
+.im_dialog_input_send.-active { background-color:#5865f2 !important; }
+.im_dialog_input_attach:hover { background-color:#4e5058 !important; }
+.im_button,.wide_button,.acc_add_button { border-radius:4px; font-weight:600; }
+.im_button_light,.wide_button_light { border-radius:4px; }
+.checkbox_icon,.radio_circle { border-radius:4px; }
+.layer_box,.openvk-color-dialog,.openvk-wallpaper-dialog { background:#313338; color:#dbdee1; border-color:#1e1f22; border-radius:8px; }
+.layer_box_header,.settings_header { background:#313338; border-color:#26272b; }
+.settings_content,.settings_content_appearance { background:#313338; color:#dbdee1; }
+.settings_tab_underline { background:#5865f2; }
+.context_menu,.dropdown_items,.openvk-theme-context-menu { background:#111214; border:1px solid #111214; border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.context_menu_item:hover,.dropdown_item:hover,.openvk-theme-context-menu button:hover { background:#4752c4; color:#fff; }
+.im_info { background:#2b2d31; border-color:#1f2023; }
+.im_info_title,.im_info_bottom_panel { background:#2b2d31; border-color:#1f2023; }
+.im_info_separator { background:#3f4147; }
+.openvk-theme-card { border-color:#4e5058; border-radius:8px; }
+.openvk-theme-option.-selected .openvk-theme-card { border-color:#5865f2; box-shadow:0 0 0 2px rgba(88,101,242,.2); }
+::-webkit-scrollbar { width:12px; height:12px; }
+::-webkit-scrollbar-track { background:#2b2d31; border:3px solid #313338; border-radius:8px; }
+::-webkit-scrollbar-thumb { min-height:40px; background:#1a1b1e; border:3px solid #313338; border-radius:8px; }
+::-webkit-scrollbar-thumb:hover { background:#111214; }
+
+/* Finish the Discord palette for the dialogs, settings, pickers, and popups. */
+:root {
+  --ovk-accent:#5865f2;
+  --win32-window-title-font-family:"gg sans",Arial,sans-serif;
+  --dialogitem-selected-badge-bg:#f23f42; --dialogitem-selected-badge-fg:#fff;
+  --dialogitem-outbadge-bg:#5865f2; --dialogitem-outbadge-fg:#fff;
+  --dialogitem-muted-badge-bg:#4e5058; --dialogitem-muted-icon:#949ba4;
+  --dialogitem-selected-muted-icon:#dbdee1; --dialogitem-selected-verified-icon:#23a559;
+  --dialogitem-delete-icon:#b5bac1; --dialogitem-delete-icon-hover:#fff;
+  --dialogitem-selected-delete-icon:#fff; --dialogitem-selected-delete-icon-hover:#fff;
+  --dialogitem-sending-icon:#b5bac1; --dialogitem-selected-sending-icon:#fff;
+  --header-title:#f2f3f5; --header-back-fg:#b5bac1; --header-back-icon:#b5bac1;
+  --header-remove-selection-icon:#b5bac1; --header-remove-selection-icon-hover:#fff;
+  --header-4state-icon:#b5bac1; --header-4state-icon-hover:#fff;
+  --header-4state-active-icon:#5865f2; --header-4state-active-icon-hover:#7983f5;
+  --info-icon:#b5bac1; --info-name-edit-icon:#b5bac1; --info-name-edit-icon-hover:#fff;
+  --info-list-item-hover-bg:#404249; --info-members-add-participant-selected-checkbox:#5865f2;
+  --info-members-add-participant-unselected-checkbox:#6d6f78;
+  --dialog-input-ta-empty-fg:#949ba4; --dialog-input-send-icon:#b5bac1;
+  --dialog-input-send-inactive-icon:#6d6f78; --dialog-input-send-active-icon:#5865f2;
+  --dialog-input-send-mic-icon:#b5bac1; --dialog-input-send-mic-icon-hover:#fff;
+  --dialog-input-attach-bg:#383a40; --dialog-input-attach-doc-icon:#b5bac1;
+  --dialog-input-attach-doc-upload-bg:#4e5058; --dialog-input-attach-doc-upload-progress-bg:#5865f2;
+  --dialog-input-attach-file-name-fg:#dbdee1; --dialog-input-attach-file-size-fg:#949ba4;
+  --dialog-messages-date-bg:#313338; --dialog-messages-date-fg:#949ba4;
+  --dialog-messages-date-shadow:transparent; --dialog-messages-new-line-bg:#f23f42;
+  --dialog-message-selected-bg:#404249; --dialog-message-select-icon:#6d6f78;
+  --dialog-message-select-hover-icon:#b5bac1; --dialog-message-selected-select-icon:#5865f2;
+  --dialog-message-icon:#b5bac1; --dialog-message-icon-hover:#fff;
+  --dialog-forwarded-line:#5865f2; --dialog-pinned-icon:#f0b232;
+  --photos-selected-icon-fg:#fff; --photos-selected-icon-bg:#5865f2;
+  --photos-album-icon-fg:#b5bac1; --photos-album-icon-bg:#383a40;
+  --photos-album-icon-hover-bg:#404249;
+  --compose-filter-user-hover-bg:#404249; --compose-filter-user-name-fg:#f2f3f5;
+  --compose-tag-bg:#404249; --compose-tag-fg:#dbdee1; --compose-tag-remove-icon:#b5bac1;
+  --compose-tag-remove-icon-hover:#fff;
+  --layer-loading-bg:rgba(30,31,34,.8); --layer-loading-spinner-bg:#5865f2;
+  --spinner-bg:#5865f2; --spinner-monochrome-bg:#5865f2;
+  --context-menu-item-hover-fg:#fff; --context-menu-item-hover-count-bg:#404249;
+  --context-menu-item-hover-count-fg:#dbdee1; --popover-border:#1e1f22;
+  --popover-shadow:rgba(0,0,0,.4); --settings-line-left-fg:#dbdee1;
+  --settings-line-toggle-label-fg:#b5bac1; --settings-buttonlight-hover-bg:#404249;
+  --communities-icon:#b5bac1; --communities-icon-hover:#fff;
+  --accpanel-bg:#1e1f22; --accpanel-border-right:#1f2023;
+  --accpanel-sep-border-bottom:#35373c; --accpanel-cur-icon:#5865f2;
+  --accpanel-badge-fg:#fff; --accpanel-badge-bg:#f23f42;
+  --accpanel-graybadge-bg:#4e5058; --accpanel-dimmed-bg:#35373c;
+  --accpanel-add-bg:#383a40; --accpanel-add-fg:#b5bac1;
+  --accpanel-add-hover-bg:#5865f2; --accpanel-add-hover-fg:#fff;
+  --toggle-bg:#4e5058; --toggle-slider-bg:#dbdee1; --toggle-disabled-bg:#4e5058;
+  --toggle-enabled-bg:#23a559; --toggle-enabled-slider-bg:#fff;
+  --checkbox-border:#6d6f78; --checkbox-bg:#5865f2; --checkbox-checked-bg:#404249;
+  --radio-border:#6d6f78; --radio-selected-border:#5865f2; --radio-selected-fg:#5865f2;
+  --smiles-box-bg:#2b2d31; --smiles-box-border:#1e1f22; --smiles-box-shadow:rgba(0,0,0,.4);
+  --smiles-box-smile-hover-bg:#404249; --smiles-box-section-header-fg:#b5bac1;
+  --smiles-box-tabs-border:#3f4147; --smiles-box-tab-active-bg:#404249;
+  --smiles-box-tab-active-fg:#fff; --smiles-box-icon-normal:#b5bac1;
+  --smiles-box-icon-hover:#fff; --smiles-box-icon-active:#5865f2;
+  --toast-yellow-bg:#2b2d31; --toast-yellow-fg:#f2f3f5;
+  --toast-green-bg:#2b2d31; --toast-green-fg:#f2f3f5;
+  --toast-message-bg:#2b2d31; --toast-message-fg:#f2f3f5; --toast-link-fg:#00a8fc;
+  --nt-input-bg:#383a40; --win32-window-title-btn-fg:#dbdee1;
+}
+
+/* Window chrome and the two-pane layout. */
+.main_view.im_view { display:flex !important; align-items:stretch; }
+.main_view.im_view > .acc_panel, .main_view.im_view > .im_left { float:none; flex:0 0 auto; }
+.main_view.im_view > .im_right {
+  float:none; flex:1 1 0%; min-width:0; width:auto !important;
+  margin-left:0 !important; box-sizing:border-box; background:#313338 !important;
+}
+.window_header {
+  height:32px !important; min-height:32px; box-sizing:border-box; padding:0 8px;
+  display:flex; align-items:center; background:#1e1f22 !important;
+  color:#f2f3f5 !important; border:0 !important; box-shadow:0 1px 0 #111214;
+}
+.window_header_draggable { height:100% !important; top:0 !important; }
+.window_header_left { flex:1; min-width:0; height:100%; line-height:32px !important; color:#f2f3f5 !important; font-weight:600; }
+.window_header_buttons { position:absolute; z-index:2; top:0; right:4px; height:100%; display:flex; align-items:center; }
+.window_header_button {
+  width:24px !important; height:24px !important; margin:0 2px !important; padding:0;
+  display:flex; align-items:center; justify-content:center;
+  border:0 !important; border-radius:4px !important; background:transparent !important; box-shadow:none !important;
+}
+.window_header_button::before { width:13px !important; height:13px !important; background-color:#b5bac1 !important; }
+.window_header_button:hover { background:#35373c !important; }
+.window_header_button:active { background:#404249 !important; }
+.window_header_button.-close:hover { background:#da373c !important; }
+body:-webkit-window-inactive .window_header { background:#292b2f !important; color:#949ba4 !important; }
+body:-webkit-window-inactive .window_header_left { color:#949ba4 !important; }
+
+/* Search, composer, and selected chat header. */
+.im_left_search { flex-basis:52px; height:52px; border-bottom:1px solid #1f2023; }
+.im_left_search_input_wrap { padding-top:10px; padding-bottom:10px; }
+.im_left_search_input_bg, .communities_search_wrap .search_field_bg {
+  height:32px; border:0; border-radius:6px !important; background:#1e1f22 !important;
+}
+.im_left_search input[type="text"].im_left_search_input,
+.communities_search_wrap input[type="text"].search_field_input {
+  height:32px; border:0 !important; background:transparent !important;
+  color:#dbdee1 !important; box-shadow:none !important;
+}
+.im_left_search_icon, .communities_search_wrap .search_field_icon { background-color:#b5bac1 !important; }
+.im_left_search_icon:hover { background-color:#fff !important; }
+.header.im_dialog_header { background:#313338 !important; border-bottom:1px solid #26272b; }
+.header.im_dialog_header .header_title,
+.header.im_dialog_header .im_dialog_header_title_label { color:#f2f3f5 !important; }
+.im_dialog_header_title, .im_dialog_header_title_label,
+.im_dialog_header_compact_title, .im_dialog_selection_header_title,
+.im_dialog_header_title *, .im_dialog_header_title_label *,
+.im_dialog_header_compact_title *, .im_dialog_selection_header_title * {
+  -webkit-user-select:none !important; user-select:none !important;
+}
+.im_dialog_header_icon, .im_dialog_header_info, .im_dialog_header_remove_selection,
+.im_dialog_header_calendar, .im_dialog_header_back { background-color:#b5bac1 !important; }
+.im_dialog_header_icon:hover, .im_dialog_header_info:hover,
+.im_dialog_header_remove_selection:hover, .im_dialog_header_calendar:hover {
+  background-color:#fff !important;
+}
+.im_dialog_input { min-height:56px; border-top:1px solid #26272b !important; padding:0 16px !important; box-sizing:border-box; }
+.im_dialog_input_ta_wrap {
+  min-height:0; margin:10px 0; border:0 !important; border-radius:8px !important; background:transparent !important;
+}
+.im_dialog_input_ta_wrap textarea { border:0 !important; background:transparent !important; }
+.im_dialog_input_field_wrap {
+  margin:6px 0;
+  background:#383a40 !important;
+  border-radius:8px;
+}
+
+.im_dialog_input_ta_wrap_content_editable { padding:7px 15px 8px 10px !important; }
+.im_dialog_input_ta_wrap_content_editable:empty,
+.im_dialog_input_ta_wrap_content_editable:empty::before { color:#949ba4 !important; }
+.im_dialog_input_ta_icons>div, .im_dialog_input_send,
+.im_dialog_input_attach, .im_dialog_header_icon.-search,
+.im_dialog_header_icon.-check, .im_dialog_header_icon.-important { color:#b5bac1 !important; }
+.im_dialog_input_ta_icons>div:hover, .im_dialog_input_send:hover,
+.im_dialog_input_attach:hover { background-color:#4e5058 !important; color:#fff !important; }
+.im_dialog_input_send.-active { background-color:#5865f2 !important; color:#fff !important; }
+
+/* Readable menu and hover states across context menus and recipient lists. */
+.im_context_menu_item.-hover, .im_context_menu_item:not(.-custom-hover):hover,
+.im_context_menu_item.-custom-hover, .dropdown_item:hover,
+.im_dialog_menu_item:hover, .im_dialog_menu_item.-hover,
+.im_main_menu_item:not(.-no-hover):hover,
+.im_dialogs_search_item_user.-hover, .im_dialogs_search_item_user:hover,
+.im_dialogs_search_item_user.-native_hover:hover,
+.im_dialogs_search_item_user.-selected {
+  background:#4752c4 !important; color:#fff !important;
+}
+.im_context_menu_item.-hover *, .im_context_menu_item:not(.-custom-hover):hover *,
+.im_context_menu_item.-custom-hover *, .dropdown_item:hover *,
+.im_dialog_menu_item:hover *, .im_dialog_menu_item.-hover *,
+.im_main_menu_item:not(.-no-hover):hover *,
+.im_dialogs_search_item_user.-hover *, .im_dialogs_search_item_user:hover *,
+.im_dialogs_search_item_user.-native_hover:hover *,
+.im_dialogs_search_item_user.-selected * { color:#fff !important; }
+.im_context_menu_item.-hover [class*="icon"],
+.im_context_menu_item:not(.-custom-hover):hover [class*="icon"],
+.im_context_menu_item.-custom-hover [class*="icon"],
+.im_dialog_menu_item:hover [class*="icon"], .im_dialog_menu_item.-hover [class*="icon"],
+.im_main_menu_item:not(.-no-hover):hover [class*="icon"] { background-color:#fff !important; }
+.im_dialog_attach_menu { background:#2b2d31 !important; border:1px solid #1f2023; border-radius:8px; }
+.im_dialog_menu_item_icon.-doc, .im_dialog_menu_item_icon.-photo,
+.im_dialog_menu_item_icon.-video, .im_dialog_menu_item_icon.-audio,
+.im_dialog_menu_item_icon.-map { background-color:#b5bac1 !important; }
+.im_dialog_menu_item:hover .im_dialog_menu_item_icon,
+.im_dialog_menu_item.-hover .im_dialog_menu_item_icon { background-color:#fff !important; }
+.box_attach_header { background:#313338 !important; border-bottom:1px solid #26272b; }
+.box_attach_title, .box_attach_title_select>.select_label_title,
+.box_attach_title_select .im_context_menu_title { color:#fff !important; font-weight:700 !important; }
+.box_attach_content { background:#2b2d31 !important; color:#dbdee1; }
+.box_attach_content .im_button, .box_attach_content .im_button_light,
+.box_attach_content .wide_button, .box_attach_content .wide_button_light {
+  border-radius:4px !important; background:#4e5058 !important; color:#dbdee1 !important;
+}
+.box_attach_content .im_button:hover, .box_attach_content .im_button_light:hover,
+.box_attach_content .wide_button:hover, .box_attach_content .wide_button_light:hover {
+  background:#5865f2 !important; color:#fff !important;
+}
+.box_attach_content .search_field_bg { background:#1e1f22 !important; border-radius:6px !important; }
+.box_attach_content input[type="text"].search_field_input {
+  border:0 !important; background:transparent !important; color:#dbdee1 !important; box-shadow:none !important;
+}
+.box_attach_content .search_field_icon { background-color:#b5bac1 !important; }
+.box_attach_doc_item { background:#2b2d31; border-bottom:1px solid #3f4147; }
+.box_attach_doc_item:hover { background:#404249 !important; color:#fff !important; }
+.box_attach_doc_item:hover *, .box_attach_doc_item:hover .im_attach_doc_file_size { color:#fff !important; }
+.im_attach_upload_progress { border:1px solid #5865f2; border-radius:4px; background:#383a40; }
+
+/* Member checks, invite tags, settings controls, and photos. */
+.im_info_list_item.-hl:hover, .im_info_members_user:hover,
+.im_info_add_participant_list .im_info_members_user:hover { background:#404249 !important; color:#fff !important; }
+.im_info_list_item.-hl:hover *, .im_info_members_user:hover *,
+.im_info_add_participant_list .im_info_members_user:hover * { color:#fff !important; }
+.im_info_members_user_checkbox, .im_info_members_user_checkbox.-not { background-color:#5865f2 !important; }
+.im_info_members_user_checkbox.-disabled { background-color:#4e5058 !important; opacity:.65; }
+.im_info_add_participant_filter_tag { background:#404249 !important; color:#dbdee1 !important; border:1px solid #1e1f22; }
+.im_info_add_participant_filter_tag_remove,
+.im_info_add_participant_filter_tag_remove:hover { background-color:#b5bac1 !important; }
+.im_info_name_edit, .im_info_name_edit:hover,
+.im_info_bottom_panel_button_wide.-back::before,
+.im_dialog_header_back, .header_back { background-color:#b5bac1 !important; }
+.checkbox_icon { border:1px solid #6d6f78 !important; border-radius:4px !important; background:#1e1f22 !important; }
+.checkbox.-checked>.checkbox_icon { border:0 !important; background:#5865f2 !important; }
+.checkbox.-checked>.checkbox_icon>.checkbox_icon_icon { background-color:#fff !important; }
+.radio_circle { border-color:#6d6f78 !important; background:#1e1f22 !important; }
+.radio.-selected .radio_circle { border-color:#5865f2 !important; }
+.radio.-selected .radio_circle::before { background:#5865f2 !important; }
+.toggle_bg { border:0 !important; border-radius:8px !important; background:#4e5058 !important; }
+.toggle_slider { border:0 !important; border-radius:50% !important; background:#dbdee1 !important; }
+.toggle.-enabled .toggle_bg { background:#23a559 !important; }
+.toggle.-enabled .toggle_slider { background:#fff !important; }
+.im_photos_photo_selected:not(.-unselected) { background:#5865f2 !important; }
+.im_photos_photo_selected .im_photos_photo_selected_icon { background-color:#fff !important; }
+.im_photos_photo_selected.-unselected .im_photos_photo_selected_icon { background-color:#b5bac1 !important; }
+.im_photos_result, .im_photos_result.-send { color:#dbdee1 !important; }
+.im_photos_button_icon.-webcam { background-color:#5865f2 !important; }
+
+/* Messages, date separators, unread divider, and chat notifications. */
+.im_dialog_message_button.-reply, .im_dialog_message_button.-forward,
+.im_dialog_message_button.-important, .im_dialog_message_button.-edit,
+.im_dialog_message_button { background-color:#404249 !important; }
+.im_dialog_message:hover .im_dialog_message_button:not(.-selected):hover,
+.im_dialog_message_next:hover .im_dialog_message_button:not(.-selected):hover,
+.im_dialog_message_button.-selected { background-color:#5865f2 !important; }
+.im_dialog_message.-selected, .im_dialog_message_next.-selected,
+.im_dialog_message.-gift.-selected { background-color:#404249 !important; }
+.im_dialog_message.-selected, .im_dialog_message.-selected *,
+.im_dialog_message_next.-selected, .im_dialog_message_next.-selected * { color:#fff !important; }
+.im_dialog_message.-selected .im_dialog_message_button,
+.im_dialog_message_next.-selected .im_dialog_message_button { background-color:#5865f2 !important; }
+.im_dialog_message_container.-out-unread,
+.im_dialog_messages.openvk-wallpaper-active .im_dialog_message_container.-out-unread {
+  background:#35373c !important;
+}
+.im_dialog_messages_date_inner {
+  background:#313338 !important; color:#b5bac1 !important;
+  border:0 !important; border-radius:0 !important; box-shadow:none !important;
+}
+.im_dialog_date { color:#949ba4 !important; }
+.im_new_messages_label {
+  background:#313338 !important; color:#fff !important;
+  border:0 !important; border-radius:0 !important; box-shadow:none !important;
+}
+.im_new_messages_line { background:#f23f42 !important; }
+.im_message_reply_line { background:#5865f2 !important; }
+.im_fwd_messages { border-left-color:#5865f2 !important; }
+.im_dialog_pinned_msg { background:#2b2d31 !important; border-bottom:1px solid #1f2023; box-shadow:0 1px 3px rgba(0,0,0,.25); }
+.im_dialog_pinned_msg_icon { background-color:#f0b232 !important; }
+.im_dialog_pinned_msg_user_name { color:#00a8fc !important; }
+.im_dialog_pinned_msg_user_date { color:#949ba4 !important; }
+.im_dialog_pinned_msg_text { color:#dbdee1 !important; }
+.im_dialog_pinned_msg_hide { background-color:#4e5058 !important; }
+.im_dialog_pinned_msg_hide:hover { background-color:#5865f2 !important; }
+.im_dialog_item_online, .im_dialog_item_online_mobile,
+.im_dialog_item_photo_wrap.-online::after { background-color:#23a559 !important; }
+.dialogitem.-selected, .im_dialog_item.-selected { background:#404249 !important; }
+.toast { box-sizing:border-box; border:1px solid #1e1f22; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.toast, .toast.-message, .toast.-conn_cert_error, .toast.-conn_connecting,
+.toast.-conn_proxy_error, .toast.-conn_updating, .toast.-conn_waiting, .toast.-conn_connected {
+  background:#2b2d31 !important; color:#f2f3f5 !important;
+}
+.toast .toast_text, .toast .toast_text *, .toast_text>a.im_simple_link { color:#f2f3f5 !important; }
+.openvk-wallpaper-choose {
+  min-height:32px !important; margin-left:10px !important; padding:0 14px !important;
+  border:0 !important; border-radius:4px !important; background:#5865f2 !important;
+  color:#fff !important; font:600 14px "gg sans",Arial,sans-serif !important; box-shadow:none !important;
+}
+.openvk-wallpaper-choose:hover { background:#4752c4 !important; color:#fff !important; }
+input.settings_downloads_field {
+  border:1px solid #1e1f22 !important; border-radius:4px !important;
+  background:#1e1f22 !important; color:#dbdee1 !important; box-shadow:none !important;
+}
+
+/* Emoji picker and sticker hover stay visible in the dark palette. */
+.im_dialog_smile_stickers { background:#2b2d31 !important; border:1px solid #1e1f22 !important; border-radius:8px !important; box-shadow:0 8px 24px rgba(0,0,0,.35) !important; }
+.smiles_section_header { background:#2b2d31 !important; color:#b5bac1 !important; }
+.smile:hover, .sticker:hover { background:#404249 !important; border-radius:4px !important; }
+.smile_stickers_tabs { border-top:1px solid #3f4147 !important; background:#2b2d31 !important; }
+.smile_stickers_icon_tab.-active, .smile_stickers_tab.-active,
+.smile_stickers_icon_tab:active, .smile_stickers_tab:active { background:#404249 !important; }
+.smile_stickers_icon_tab.-active::before,
+.smile_stickers_icon_tab:active::before { background-color:#fff !important; }
+.sticker:hover .sticker_img, .sticker:hover .sticker_img>.component-image-image,
+.sticker:hover .sticker_anim_container, .sticker:hover .sticker_anim_container>svg {
+  opacity:1 !important; visibility:visible !important;
+}
+
+/* Complete the Discord palette for every variable defined by classic.css. */
+:root {
+  --search-hl-bg: #35373c;
+  --link-underline: #5865f2;
+  --link-hover-underline: #5865f2;
+  --input-search-clear-icon: #b5bac1;
+  --empty-placeholder-fg: #b5bac1;
+  --button-hover-fg: #f2f3f5;
+  --button-active-fg: #f2f3f5;
+  --button-spinner-bg: rgba(255, 255, 255, 0.08);
+  --button-spinner-fg: #f2f3f5;
+  --tt-bg: rgba(148, 155, 164, 0.35);
+  --tt-fg: #f2f3f5;
+  --tt-arrow-icon: rgba(148, 155, 164, 0.35);
+  --tt-audio-fg: #5865f2;
+  --tt-audio-bg: #404249;
+  --tt-audio-arrow-icon: #b5bac1;
+  --mbox-subtitle-fg: #b5bac1;
+  --mbox-text-fg: #dbdee1;
+  --about-title-fg: #dbdee1;
+  --about-version-fg: #dbdee1;
+  --about-text-fg: #dbdee1;
+  --about-bullet-fg: #b5bac1;
+  --update-button-downloading-bg: #404249;
+  --update-button-downloading-fg: #b5bac1;
+  --update-button-progress-bg: #404249;
+  --update-version-fg: #b5bac1;
+  --dialogitem-message-out-fg: #b5bac1;
+  --dialogitem-important-icon: rgba(148, 155, 164, 0.35);
+  --dialogitem-selected-important-icon: rgba(255, 255, 255, 0.08);
+  --dialogitem-selected-initialsavatar-bg: #5865f2;
+  --dialogitem-selected-initialsavatar-fg: #5865f2;
+  --header-close-fg: #5865f2;
+  --header-input-search-placeholder-fg: #b5bac1;
+  --left-empty-title-fg: #b5bac1;
+  --right-empty-text-fg: #b5bac1;
+  --right-big-text-fg: #b5bac1;
+  --left-empty-text-fg: #b5bac1;
+  --right-empty-vk-icon: #b5bac1;
+  --info-subtitle-fg: #b5bac1;
+  --info-name-input-border-bottom: #404249;
+  --info-chat-image-overlay-bg: rgba(0, 0, 0, 0.35);
+  --info-chat-image-placeholder-bg: #2b2d31;
+  --info-chat-image-placeholder-border: #404249;
+  --info-chat-image-placeholder-icon: #b5bac1;
+  --info-chat-image-change-icon: #f2f3f5;
+  --info-list-leave-fg: #f38688;
+  --info-list-return-fg: #57f287;
+  --info-attaches-select-arrow-icon: #b5bac1;
+  --info-attaches-select-active-arrow-icon: #b5bac1;
+  --info-attaches-empty-placeholder-fg: #b5bac1;
+  --info-attaches-link-letter-bg: #404249;
+  --info-attaches-link-letter-fg: #b5bac1;
+  --dialog-input-audio-rec-dur-fg: #f2f3f5;
+  --dialog-input-audio-rec-playpause-icon: #f2f3f5;
+  --dialog-input-audio-wave-bg: #404249;
+  --dialog-input-attaches-shadow: #404249;
+  --dialog-input-attach-remove-bg: rgba(0, 0, 0, 0.35);
+  --dialog-input-attach-remove-hover-bg: rgba(0, 0, 0, 0.35);
+  --dialog-input-attach-remove-icon: #f2f3f5;
+  --dialog-input-attach-doc-remove-bg: rgba(148, 155, 164, 0.35);
+  --dialog-input-attach-doc-remove-hover-bg: rgba(148, 155, 164, 0.35);
+  --dialog-input-attach-audio-dur-fg: #b5bac1;
+  --dialog-input-attach-fwd-line-bg: #404249;
+  --dialog-input-attach-progress-wrap-bg: rgba(0, 0, 0, 0.35);
+  --dialog-input-attach-image-bg: #404249;
+  --dialog-input-attach-audio-hover-bg: #404249;
+  --dialog-input-attach-geo-remove-bg: rgba(0, 0, 0, 0.35);
+  --dialog-input-attach-geo-remove-hover-bg: #dbdee1;
+  --dialog-input-mentions-list-shadow: rgba(0, 0, 0, 0.35);
+  --dialog-input-keyboard-default-bg: #2b2d31;
+  --dialog-input-keyboard-default-fg: rgba(0, 0, 0, 0.35);
+  --dialog-input-keyboard-default-border: #35373c;
+  --dialog-input-keyboard-default-hover-bg: #35373c;
+  --dialog-input-keyboard-default-hover-border: #35373c;
+  --dialog-input-keyboard-negative-bg: #f23f42;
+  --dialog-input-keyboard-negative-fg: #f38688;
+  --dialog-input-keyboard-negative-border: #f23f42;
+  --dialog-input-keyboard-negative-hover-bg: #f23f42;
+  --dialog-input-keyboard-negative-hover-border: #f23f42;
+  --dialog-input-keyboard-positive-bg: #23a559;
+  --dialog-input-keyboard-positive-fg: #57f287;
+  --dialog-input-keyboard-positive-border: #23a559;
+  --dialog-input-keyboard-positive-hover-bg: #23a559;
+  --dialog-input-keyboard-positive-hover-border: #23a559;
+  --dialog-input-keyboard-primary-bg: #5865f2;
+  --dialog-input-keyboard-primary-fg: #5865f2;
+  --dialog-input-keyboard-primary-border: #5865f2;
+  --dialog-input-keyboard-primary-hover-bg: #5865f2;
+  --dialog-input-keyboard-primary-hover-border: #5865f2;
+  --dialog-header-back-badge-fg: #f2f3f5;
+  --dialog-header-back-badge-bg: #5865f2;
+  --dialog-typing-text-fg: #b5bac1;
+  --dialog-typing-point-icon: #b5bac1;
+  --dialog-typing-point-active-icon: #b5bac1;
+  --dialog-messages-error-icon: #f38688;
+  --dialog-messages-load-error-big-title-fg: #f38688;
+  --dialog-history-end-button-shadow: rgba(0, 0, 0, 0.35);
+  --dialog-history-end-button-border: #35373c;
+  --dialog-history-end-button-hover-border: #35373c;
+  --dialog-history-end-button-bg: #2b2d31;
+  --dialog-history-end-button-hover-bg: #2b2d31;
+  --dialog-history-end-button-badge-bg: #5865f2;
+  --dialog-history-end-button-badge-fg: #f2f3f5;
+  --dialog-history-end-button-icon: rgba(148, 155, 164, 0.35);
+  --dialog-history-end-button-icon-hover: #5865f2;
+  --dialog-pinned-shadow: rgba(0, 0, 0, 0.35);
+  --dialog-search-message-arrow-icon: #b5bac1;
+  --dialog-message-photo-bg: #404249;
+  --dialog-message-gift-bg: #404249;
+  --dialog-message-gift-time-fg: #b5bac1;
+  --dialog-message-gift-text-fg: #b5bac1;
+  --dialog-message-gift-selected-bg: #5865f2;
+  --dialog-message-gift-select-icon: #5865f2;
+  --dialog-message-gift-selected-select-icon: #5865f2;
+  --attach-upload-progress-cancel-bg: rgba(0, 0, 0, 0.35);
+  --attach-upload-progress-retry-bg: rgba(0, 0, 0, 0.35);
+  --attach-upload-progress-cancel-icon: rgba(255, 255, 255, 0.08);
+  --attach-upload-progress-cancel-icon-hover: #f2f3f5;
+  --attach-photo-bg: #35373c;
+  --attach-photo-upload-progress-bg: rgba(0, 0, 0, 0.35);
+  --attach-photo-upload-cancel-icon: rgba(255, 255, 255, 0.08);
+  --attach-doc-bg: #35373c;
+  --attach-doc-loader-bg: rgba(0, 0, 0, 0.35);
+  --attach-doc-image-info-fg: #f2f3f5;
+  --attach-doc-image-info-bg: rgba(0, 0, 0, 0.35);
+  --attach-doc-image-gift-mark-fg: #f2f3f5;
+  --attach-doc-image-gift-mark-bg: rgba(0, 0, 0, 0.35);
+  --attach-doc-image-upload-progress-bg: rgba(0, 0, 0, 0.35);
+  --attach-doc-title-fg: #f2f3f5;
+  --attach-doc-title-bg: rgba(0, 0, 0, 0.35);
+  --attach-doc-file-upload-bg: #404249;
+  --attach-doc-file-upload-progress-bg: #5865f2;
+  --attach-doc-audio-upload-progress-bg: #5865f2;
+  --attach-doc-audio-upload-progress-retry-bg: #5865f2;
+  --attach-link-border: #35373c;
+  --attach-link-text-fg: #dbdee1;
+  --attach-link-image-border: rgba(0, 0, 0, 0.35);
+  --attach-url-rounded-fg: #f2f3f5;
+  --attach-url-rounded-bg: rgba(0, 0, 0, 0.35);
+  --attach-wall-border: #5865f2;
+  --attach-audio-play-icon-bg: #5865f2;
+  --attach-audio-play-icon-fg: #f2f3f5;
+  --attach-audio-hover-bg: #35373c;
+  --attach-audio-unreadmessage-hover-bg: #404249;
+  --attach-audio-bar-full-bg: #404249;
+  --attach-audio-unreadmessage-bar-full-bg: #404249;
+  --attach-audio-bar-buffered-bg: #f23f42;
+  --attach-audio-unreadmessage-bar-buffered-bg: #f23f42;
+  --attach-audio-bar-progress-bg: #5865f2;
+  --attach-audio-bar-slider-bg: #5865f2;
+  --attach-video-play-icon: #f2f3f5;
+  --attach-video-dur-fg: #f2f3f5;
+  --attach-video-dur-bg: rgba(0, 0, 0, 0.35);
+  --attach-snapster-over-label-fg: #f2f3f5;
+  --attach-money-transfer-from-fg: #dbdee1;
+  --attach-money-transfer-left-rub-border: rgba(0, 0, 0, 0.35);
+  --attach-market-border: rgba(0, 0, 0, 0.35);
+  --attach-market-desc-fg: #dbdee1;
+  --attach-poll-answer-bg: #404249;
+  --attach-poll-answer-hover-bg: #404249;
+  --attach-poll-answer-count-fg: #b5bac1;
+  --attach-poll-gradient-answer-bg: rgba(255, 255, 255, 0.08);
+  --attach-poll-gradient-answer-hover-bg: rgba(255, 255, 255, 0.08);
+  --attach-poll-gradient-checkbox-border: #35373c;
+  --attach-answered-poll-answer-bg: #f23f42;
+  --attach-answered-poll-answer-rate-bg: #f23f42;
+  --attach-answered-poll-gradient-answer-rate-bg: #f23f42;
+  --attach-answered-poll-my-answer-fg: #f38688;
+  --attach-answered-poll-gradient-my-answer-fg: #f38688;
+  --attach-album-name-textshadow: rgba(0, 0, 0, 0.35);
+  --attach-album-author-textshadow: rgba(0, 0, 0, 0.35);
+  --attach-album-name-fg: #f2f3f5;
+  --attach-album-author-fg: #f2f3f5;
+  --attach-playlist-default-cover-fg: #b5bac1;
+  --attach-playlist-default-cover-bg: #404249;
+  --attach-playlist-head-info-button-fg: rgba(255, 255, 255, 0.08);
+  --attach-playlist-head-info-button-hover-fg: #f2f3f5;
+  --attach-playlist-showall-hover-bg: #35373c;
+  --attach-playlist-play-icon: #f2f3f5;
+  --attach-gift-image-shadow: rgba(0, 0, 0, 0.35);
+  --photos-button-fg: #5865f2;
+  --photos-button-bg: #404249;
+  --photos-button-icon: #5865f2;
+  --photos-result-send-fg: #5865f2;
+  --photos-photo-overlay-bg: #dbdee1;
+  --photos-webcam-icon-bg: #5865f2;
+  --photos-webcam-icon-fg: #f2f3f5;
+  --photos-webcam-bg: #dbdee1;
+  --photos-webcam-placeholder-bg: #dbdee1;
+  --photos-webcam-placeholder-fg: #b5bac1;
+  --photos-webcam-spinner-color: #2b2d31;
+  --photos-webcam-attach-button-bg: #5865f2;
+  --photos-webcam-attach-button-fg: #f2f3f5;
+  --photos-webcam-attach-button-active-bg: #5865f2;
+  --photos-webcam-timer-second-fg: #5865f2;
+  --docs-item-line-bg: #35373c;
+  --context-menu-item-count-bg: #404249;
+  --context-menu-item-count-fg: #b5bac1;
+  --context-menu-arrow-icon: #b5bac1;
+  --main-menu-section-fg: #b5bac1;
+  --main-menu-update-icon-bg: #b5bac1;
+  --main-menu-update-icon-fg: #5865f2;
+  --calendar-bg: #2b2d31;
+  --calendar-arrow-icon: #f2f3f5;
+  --calendar-border: #35373c;
+  --calendar-header-bg: #5865f2;
+  --calendar-header-fg: #f2f3f5;
+  --calendar-dow-fg: #b5bac1;
+  --calendar-dow-bg: #404249;
+  --calendar-cell-selected-border: #5865f2;
+  --calendar-cell-selected-bg: #5865f2;
+  --calendar-reset-bg: #404249;
+  --calendar-reset-fg: #5865f2;
+  --compose-dialogitem-icon: #b5bac1;
+  --compose-dialogitem-selected-icon: #b5bac1;
+  --compose-to-fg: #dbdee1;
+  --compose-count-fg: rgba(148, 155, 164, 0.35);
+  --compose-chat-icon-bg: #35373c;
+  --compose-chat-icon-fg: #b5bac1;
+  --compose-chat-line-input-placeholder-fg: #b5bac1;
+  --compose-user-line-image-change-bg: rgba(0, 0, 0, 0.35);
+  --audioplayer-progress-full-bg: rgba(148, 155, 164, 0.35);
+  --audioplayer-progress-buffered-bg: #f23f42;
+  --audioplayer-progress-value-bg: #5865f2;
+  --audioplayer-slider-bg: #5865f2;
+  --accpanel-dimmed-badge-border: #404249;
+  --group-ban-user-status-fg: #b5bac1;
+  --chatlink-reset-bg: #35373c;
+  --chatlink-reset-fg: #b5bac1;
+  --dnd-border-color: #404249;
+  --dnd-active-bg: #35373c;
+  --dnd-icon: #b5bac1;
+  --initials-avatar-fg: #f2f3f5;
+  --captcha-bg: #35373c;
+  --radio-hover-bg: #35373c;
+  --dropdown-shadow: rgba(0, 0, 0, 0.35);
+  --componentimage-bg: #35373c;
+  --login-title-fg: #dbdee1;
+  --login-footer-link-fg: #b5bac1;
+  --login-error-fg: #f38688;
+  --login-input-border: #404249;
+  --login-input-bg: #2b2d31;
+  --login-input-fg: #dbdee1;
+  --login-input-focus-border: #5865f2;
+  --login-input-error-border: #f23f42;
+  --login-resend-timer-fg: #b5bac1;
+  --login-validation-input-border: #404249;
+  --login-settings-border: #35373c;
+  --login-settings-shadow: rgba(0, 0, 0, 0.35);
+  --login-settings-hover-shadow: rgba(0, 0, 0, 0.35);
+  --login-settings-hover-border: #404249;
+  --login-icons: #b5bac1;
+  --login-icons-hover: #5865f2;
+  --settings-profile-userpic-uploading-bg: rgba(0, 0, 0, 0.35);
+  --settings-profile-userpic-uploading-spinner-bg: rgba(255, 255, 255, 0.08);
+  --settings-profile-userpic-uploading-spinner-fg: #f2f3f5;
+  --settings-line-link-red-fg: #f38688;
+  --settings-secondlevel-line-border: #35373c;
+  --settings-notifications-community-badge-fg: #dbdee1;
+  --settings-block-title-fg: #b5bac1;
+  --settings-scale-bg: #35373c;
+  --settings-scale-hover-bg: #404249;
+}
